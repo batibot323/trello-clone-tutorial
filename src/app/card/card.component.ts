@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'tc-card',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
+  @Input() id: number;
   myCard: any;
 
   cardList: any[] = [
@@ -27,9 +28,9 @@ export class CardComponent implements OnInit {
   ];
 
   constructor() { }
-  
+
   ngOnInit() {
-    this.myCard = this.cardList.find(card => card.id === 1);
+    this.myCard = this.cardList.find(card => card.id === this.id);
   }
 
 }
