@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ListModule } from './list/list.module';
+import { BoardModule } from './board/board.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,7 @@ import { ListModule } from './list/list.module';
   ],
   imports: [
     BrowserModule,
-    ListModule
+    BoardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
