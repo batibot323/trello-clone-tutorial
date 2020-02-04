@@ -9,6 +9,7 @@ import { CardDataService } from 'src/services/card-data.service';
 export class CardComponent implements OnInit {
   @Input() id: number;
   myCard: any;
+  cardDataService: CardDataService;
 
   cardList: any[] = [
     {
@@ -28,11 +29,17 @@ export class CardComponent implements OnInit {
     }
   ];
 
-  constructor(private cardDataService: CardDataService) { }
+  constructor() { 
+    this.cardDataService = new CardDataService();
+  }
 
   ngOnInit() {
     // this.myCard = this.cardList.find(card => card.id === this.id);
-    this.myCard = this.cardDataService.getCard();
+    this.myCard = this.cardDataService.flip();
+  }
+
+  flip() {
+    this.myCard = this.cardDataService.flip();
   }
 
 }
