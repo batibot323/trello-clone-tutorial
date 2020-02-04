@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CardDataService } from 'src/services/card-data.service';
 
 @Component({
   selector: 'tc-card',
@@ -27,10 +28,11 @@ export class CardComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private cardDataService: CardDataService) { }
 
   ngOnInit() {
-    this.myCard = this.cardList.find(card => card.id === this.id);
+    // this.myCard = this.cardList.find(card => card.id === this.id);
+    this.myCard = this.cardDataService.getCard();
   }
 
 }
