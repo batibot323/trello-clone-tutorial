@@ -32,11 +32,6 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {
     // this.myCard = this.cardList.find(card => card.id === this.id);
-    this.myCard = this.cardDataService.flip();
+    this.myCard = this.cardDataService.getCard();
   }
-
-  flip() {
-    this.myCard = this.cardDataService.flip();
-  }
-
 }
