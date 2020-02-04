@@ -8,6 +8,7 @@ export class CardDataService {
 
   constructor() {
     this.isCardFaceUp = true;
+    console.log('card-data service is instantiated!');
   }
 
   getCard(): any {
