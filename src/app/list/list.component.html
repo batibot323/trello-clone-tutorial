@@ -1,13 +1,4 @@
 <p>list works!</p>
-<div>
-    <tc-card [id]=2>
-    </tc-card>
-</div>
-<div>
-    <tc-card [id]=1>
-    </tc-card>
-</div>
-<div>
-    <tc-card [id]=3>
-    </tc-card>
+<div *ngFor='let cardId of listOfCardIds'>
+    <tc-card [id]='cardId'></tc-card>
 </div>
