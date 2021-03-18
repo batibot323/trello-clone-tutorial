@@ -2,3 +2,7 @@
 <div *ngFor='let cardId of listOfCardIds'>
     <tc-card [id]='cardId'></tc-card>
 </div>
+<div>
+    <input #cardTitle>
+    <button (click)='addCardToList(cardTitle.value)'>Add card!</button>
+</div>

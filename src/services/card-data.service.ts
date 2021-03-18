@@ -65,4 +65,14 @@ export class CardDataService {
   getCard(id): any {
     return this.cardList.find(card => card.id === id);
   }
+
+  addCard(title): number {
+    const newlyCreatedId = (this.cardList.splice(-1)[0].id) + 1;
+    this.cardList.push({
+      id: newlyCreatedId,
+      title: title,
+      description: ''
+    });
+    return newlyCreatedId;
+  }
 }
