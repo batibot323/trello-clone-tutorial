@@ -70,7 +70,7 @@ export class CardDataService {
     const newlyCreatedId = (this.cardList.splice(-1)[0].id) + 1;
     this.cardList.push({
       id: newlyCreatedId,
-      title: title,
+      title,
       description: ''
     });
     return newlyCreatedId;
