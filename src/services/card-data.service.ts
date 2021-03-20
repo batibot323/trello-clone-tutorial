@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Card } from 'src/app/card/card.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class CardDataService {
     console.log('card-data service is instantiated!');
   }
 
-  cardList: any[] = [
+  cardList: Card[] = [
     {
       id: 1,
       title: 'Drink water!',
@@ -62,7 +63,7 @@ export class CardDataService {
     }
   ];
 
-  getCard(id): any {
+  getCard(id): Card {
     return this.cardList.find(card => card.id === id);
   }
 
