@@ -19,8 +19,9 @@ export class CardComponent implements OnInit {
     this.myCard = this.cardDataService.getCard(this.id);
   }
 
-  openCardDetails() {
+  openCardDetails(myCard) {
     console.log('clicked');
     const modalRef = this.modalService.open(CardDetailsComponent);
+    modalRef.componentInstance.cardDetails = this.myCard;
   }
 }
